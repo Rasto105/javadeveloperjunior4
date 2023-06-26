@@ -1,5 +1,6 @@
 package ulohy;
 
+
 public class Cykly2 {
     public static void main(String[] args) {
         int cislo = 1;
@@ -12,3 +13,5 @@ public class Cykly2 {
         }
     }
 }
+
+
