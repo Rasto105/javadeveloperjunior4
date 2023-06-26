@@ -37,7 +37,7 @@ public class PriradenieZnamky {
             // ||   pouzijeme pri podmienkach, pri ktorych staci, ked plati jedna z nich (OR). Pipe vo Windows-e vlozime kombinaciou AltGr + W
             if (percenta > 90)
                 System.out.println("A");
-            else if (percenta >= 75 && percenta < 90)
+            else if (percenta >= 75 && percenta <= 90)
                 System.out.println("B");
             else if (percenta >= 65 && percenta < 75)
                 System.out.println("C");
@@ -51,6 +51,19 @@ public class PriradenieZnamky {
         System.out.println("Priemer známok je: " + (sum / pocet));
         System.out.println("Koniec programu");
 
+    }
+    public static String slovnaZnamka(int perc){
+        if (perc > 90)
+            return "A";
+        else if (perc >= 75 && perc <= 90)
+            return "B";
+        else if (perc >= 65 && perc < 75)
+            return "C";
+        else if (perc >= 0 && perc < 65)
+            return "Neuspel";
+            //break; // Stopneme "nekonecny" cyklus, cize while(true)*/
+        else
+            return "Neočakávaná vstupná hodnota";
     }
 }
 // TODO Prestavka do 14.15
