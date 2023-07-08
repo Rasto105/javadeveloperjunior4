@@ -1,6 +1,8 @@
 package ulohy.kniznica;
 
-public class Kniha {
+import java.io.Serializable;
+
+public class Kniha implements Serializable {
     private String nazov;
     private String autor;
     private int rokVydania;

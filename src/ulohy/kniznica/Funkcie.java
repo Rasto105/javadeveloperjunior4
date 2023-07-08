@@ -1,5 +1,6 @@
 package ulohy.kniznica;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -65,5 +66,38 @@ public class Funkcie {
     public void vymazVsetko(){
         bookLibrary.clear();
         System.out.println("Všetko vymazané");
+    }
+    public void ulozDoSuboru() throws IOException {
+        Scanner scn= new Scanner(System.in);
+        System.out.println("Zadaj názov: ");
+        String nazovSuboru=scn.nextLine();
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(nazovSuboru); // vytvorime subor s nazvom kniha.ser
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream); // vytvorime Object stream pre ukladanie objektov
+            objectOutputStream.writeObject(bookLibrary); // zapiseme objekt
+            objectOutputStream.flush(); // realne uskutocnime operaciu zapisu
+            objectOutputStream.close(); // zatvorime object output stream
+            fileOutputStream.close(); // zatvorime file output stream, cize subor
+        } catch (Exception e){
+            System.out.println("Nepodarilo sa uložiť!");
+            e.printStackTrace();
+        }
+
+
+    }
+    public void nacitajZoSuboru(){
+        Scanner scn= new Scanner(System.in);
+        System.out.println("Zadaj názov: ");
+        String nazovSuboru=scn.nextLine();
+        try {
+            FileInputStream fileInputStream = new FileInputStream(nazovSuboru);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            bookLibrary= (ArrayList) objectInputStream.readObject();
+            objectInputStream.close();
+            fileInputStream.close();
+            System.out.println("databaza načitana");
+        }catch (Exception e){
+            System.out.println("Nenačítal zadanu knihu");
+        }
     }
 }

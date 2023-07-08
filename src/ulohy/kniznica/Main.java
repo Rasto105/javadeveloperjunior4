@@ -1,9 +1,10 @@
 package ulohy.kniznica;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String ukon="";
         Funkcie funkcia=new Funkcie();
         while (true){
@@ -15,6 +16,8 @@ public class Main {
             System.out.println("4 Vymaž konkretnu");
             System.out.println("5 Zobraz počet knih");
             System.out.println("6 Vymaž všetky");
+            System.out.println("7 ulož databazu");
+            System.out.println("8 načitaj databazu");
             System.out.println("koniec je jednoducho koniec");
 
             ukon=scn.next();
@@ -43,6 +46,14 @@ public class Main {
                 }
                 case "6":{
                     funkcia.vymazVsetko();
+                    break;
+                }
+                case "7":{
+                    funkcia.ulozDoSuboru();
+                    break;
+                }
+                case "8":{
+                    funkcia.nacitajZoSuboru();
                     break;
                 }
                 default:{
