@@ -100,4 +100,25 @@ public class Funkcie {
             System.out.println("Nenačítal zadanu knihu");
         }
     }
+    public void hladajKnihyPodlaNazvu() {
+        Scanner scn = new Scanner(System.in);
+
+    System.out.println("Zadaj názov knihy:");
+    String hladanyNazov = scn.nextLine();
+    ArrayList<Kniha> najdeneKnihy = new ArrayList<>();
+    // Prazdny zoznam najdenych knih
+        for(Kniha konkretnaKniha: bookLibrary) {
+            // foreach pre prechadzanie kazdej knihy v nasom zozname knih
+            // Obsahuje nazov konkretnej knihy aspon cast nazvu knihy, ktory hladame?
+            if (konkretnaKniha.getNazov().contains(hladanyNazov)) {
+                najdeneKnihy.add(konkretnaKniha);
+                // Ak taku knihu najde, tak ju ulozi do zoznamu najdeneKnihy}}
+                // Vypiseme najdene knihy
+                System.out.println("\nNájdené knihy sú tieto:");
+                for (Kniha najdenaKniha : najdeneKnihy) {
+                    System.out.println(najdenaKniha);
+                }
+            }
+        }
+    }
 }

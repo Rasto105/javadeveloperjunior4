@@ -18,6 +18,7 @@ public class Main {
             System.out.println("6 Vymaž všetky");
             System.out.println("7 ulož databazu");
             System.out.println("8 načitaj databazu");
+            System.out.println("9 hľadanie podľa názvu");
             System.out.println("koniec je jednoducho koniec");
 
             ukon=scn.next();
@@ -54,6 +55,10 @@ public class Main {
                 }
                 case "8":{
                     funkcia.nacitajZoSuboru();
+                    break;
+                }
+                case "9":{
+                    funkcia.hladajKnihyPodlaNazvu();
                     break;
                 }
                 default:{
