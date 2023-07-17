@@ -1,5 +1,7 @@
 package gui;
 
+import oop.EvidenciaKnih;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -96,6 +98,7 @@ public class KalkulackaApp {
             public void actionPerformed(ActionEvent e) {
                 textField.setText(""); // Zmaze okno vzorca / vysledku
             }
+
         });
 
 

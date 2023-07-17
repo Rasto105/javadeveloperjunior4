@@ -19,6 +19,7 @@ public class Kalkulacka {
 
         JFrame hlavneOkno= new JFrame("Kalkulačka v1.0");
         hlavneOkno.setMinimumSize(new Dimension(400,300));
+        hlavneOkno.setResizable(false);
         hlavneOkno.setLocationRelativeTo(null); // vycentrovanie okna
         hlavneOkno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -36,12 +37,19 @@ public class Kalkulacka {
         JButton tlacidlo0= new JButton("0");
         tlacidlo0.setBounds(20,200,40,40);
 
-        tlacidlo0.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                vstupneOkno.setText(vstupneOkno.getText()+"0");
-            }
-        });
+            tlacidlo0.addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+if (vstupneOkno.getText().length()>0) {
+    if (!vstupneOkno.getText().substring(vstupneOkno.getText().length()-1).equals("+")&&!vstupneOkno.getText().substring(vstupneOkno.getText().length()-1).equals("-")) {
+        vstupneOkno.setText(vstupneOkno.getText()+ "0" );
+    }
+}
+                }
+
+            });
+
         // vytvorenie tlacidla 1
         JButton tlacidlo1= new JButton("1");
         tlacidlo1.setBounds(70,200,40,40);
@@ -70,6 +78,7 @@ public class Kalkulacka {
         tlacidloPlus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 vstupneOkno.setText(vstupneOkno.getText()+"+");
             }
         });
@@ -126,4 +135,6 @@ public class Kalkulacka {
         hlavneOkno.pack();
         hlavneOkno.setVisible(true);
     }
+
 }
+
