@@ -10,6 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Kalkulacka {
+    public static boolean jePovoleneCislo(String posledne2znakyZadanehoVzorca) {
+        if (! (posledne2znakyZadanehoVzorca.equals("+0") || posledne2znakyZadanehoVzorca.equals("-0")) ) {
+            return true;
+        } else
+            return false;}
+
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
